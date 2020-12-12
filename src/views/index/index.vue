@@ -5,7 +5,7 @@
             <router-view/>
         </div>
         <Map/>
-        <Cars/>
+        <!-- <Cars/> -->
         <Nav/>
     </div>
 </template>
@@ -27,6 +27,16 @@ export default {
             return routerName === "Index" ? false : true;
         }
     },
+    mounted(){
+        document.addEventListener('mouseup', (e) => {
+            const elementName = document.getElementById("children-view");
+            if(elementName && !elementName.contains(e.target)){
+                this.$router.push({
+                    name: "Index"
+                })
+            }
+        })
+    },
     watch:{
         
     }
@@ -40,8 +50,9 @@ export default {
     bottom: 0;
     right: -600px;
     z-index: 101;
-    width: 250px;
+    width: 360px;
     background-color: #34393f;
+    @include webkit(box-shadow, 0 0 18px 0 rgba(0, 0, 0, .2));
     @include webkit(transition, all .3s ease 0s);//过渡
     &.open{
         right: 0;

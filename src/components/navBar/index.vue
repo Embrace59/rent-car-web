@@ -3,10 +3,9 @@
         <ul>
             <li><i class="icon icon-help">help</i></li>
             <li><i class="icon icon-search">search</i></li>
-            <!-- href=“javascript:void(0)”的含义是，让超链接去执行一个js函数，而不是去跳转到一个地址，而void(0)表示一个空的方法，也就是不执行js函数 -->
             <li><a href="javascript: void(0);" class="select-car-btn">选择车辆</a></li>
             <li><i class="icon icon-location">location</i></li>
-            <li><i class="icon icon-user">user</i></li>
+            <li><i class="icon icon-user" @click="toUser">user</i></li>
             
         </ul>
     </div>
@@ -18,8 +17,16 @@ export default {
     components:{},
     data(){
         return {
+            
         }
     },
+    methods:{
+        toUser(){
+            this.$router.push({
+                name: "User"
+            })
+        }
+    }
 }
 </script>
 
@@ -46,18 +53,5 @@ export default {
         cursor: pointer;
     }
 }
-/* 选择车辆按钮 */
-.select-car-btn{
-    display: inline-block;
-    width: 200px;
-    height: 64px;
-    margin: 0 17px;
-    border-radius: 100px;
-    line-height: 64px;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 300;
-    color: white;
-    background-color: $color-main;
-}
+
 </style>

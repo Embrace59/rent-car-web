@@ -1,5 +1,6 @@
 @import "./normalize.scss";
 @import "./config.scss";
+@import "./ui.scss";
 
 i[class^="icon"] {
   //获取类名为icon的i标签
@@ -8,4 +9,57 @@ i[class^="icon"] {
   height: 44px;
   border-radius: 100px;
   background-color: $color-main;
+}
+
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix {
+  @extend %clearfix;
+}
+/* commmon ui */
+
+/* 选择车辆按钮 */
+.select-car-btn {
+  display: inline-block;
+  width: 200px;
+  height: 64px;
+  margin: 0 17px;
+  border-radius: 100px;
+  line-height: 64px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 300;
+  color: white;
+  background-color: $color-main;
+}
+
+/* user router-link */
+
+.user-container {
+  padding: 0 20px;
+  .group-links {
+    a {
+      display: block;
+      margin: 0 -30px;
+      padding: 0 30px;
+      height: 64px;
+      line-height: 64px;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      font-size: 15px;
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+      margin: 0 0 -10px 0;
+    }
+    span {
+      display: inline-block;
+      margin-left: 20px;
+    }
+  }
 }
